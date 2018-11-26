@@ -2,8 +2,7 @@
   "name": "media-store-net/wp-rest-registration",
   "description": "A Simple Way to Register Rest Routes to WP",
   "homepage": "https://github.com/media-store-net/WpRestRegistration",
-  "version": "1.0.4",
-  "prefer-stable": true,
+  "version": "1.0.5",
   "authors": [
     {
       "name": "Artur Voll",
