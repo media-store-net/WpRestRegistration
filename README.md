@@ -14,10 +14,10 @@ or clone the Repo on Github https://github.com/media-store-net/WpRestRegistratio
 
 First you need define a Callback function in your functions.php or other File that is included in your Wordpres Installation or anyone of your Plugin Files.
 
-**function myFunction() {
+`function myFunction() {
 
-    // Do Anything as REST Logic
+    Do Anything as REST Logic
     
-}**
+}`
 
 than you can register a Route to calling the WpRestRegistartion Class
