@@ -13,6 +13,12 @@
   "require": {
     "php": "^5.6.37 || ^7.0"
   },
+  "require-dev": {
+    "inpsyde/php-coding-standards": "^0.13",
+    "brain/monkey": "^2.0",
+    "inpsyde/monkery-test-case": "^5.0",
+    "phpunit/phpunit": "^8.3"
+  },
   "autoload": {
     "psr-4": {
       "MediaStoreNet\\WpRestRegistration\\": "src/"
