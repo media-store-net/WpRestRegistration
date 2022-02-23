@@ -46,6 +46,11 @@ class WpRestRegistration
     protected $_method;
 
     /**
+     * @var string | bool
+     */
+    protected $_permission_callback;
+
+    /**
      * ActionHook of Rest Route
      * By Defalult "rest_api_init"
      *
@@ -62,13 +67,14 @@ class WpRestRegistration
      * @param string $method
      * @param string $actionHook
      */
-    public function __construct($namespace, $rest_name, $callback, $method = 'GET', $actionHook = 'rest_api_init')
+    public function __construct($namespace, $rest_name, $callback, $method = 'GET', $permission_callback = '__return_true', $actionHook = 'rest_api_init')
     {
-        $this->_namespace  = $namespace;
-        $this->_rest_name  = $rest_name;
-        $this->_callback   = $callback;
-        $this->_method     = $method;
-        $this->_actionHook = $actionHook;
+        $this->_namespace           = $namespace;
+        $this->_rest_name           = $rest_name;
+        $this->_callback            = $callback;
+        $this->_permission_callback = $permission_callback;
+        $this->_method              = $method;
+        $this->_actionHook          = $actionHook;
 
         $this->init();
     }
@@ -81,11 +87,11 @@ class WpRestRegistration
 
         add_action($this->_actionHook, function () {
             register_rest_route($this->_namespace, $this->_rest_name, array(
-                'methods'  => $this->_method,
-                'callback' => $this->_callback,
+                'methods'             => $this->_method,
+                'callback'            => $this->_callback,
+                'permission_callback' => $this->_permission_callback,
             ));
         });
-
     }
 
 }
