@@ -11,7 +11,7 @@
     }
   ],
   "require": {
-    "php": "^5.6.37 || ^7.0"
+    "php": ">=7.3 || >=8.0"
   },
   "require-dev": {
     "inpsyde/php-coding-standards": "^0.13",
